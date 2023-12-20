@@ -1,0 +1,11 @@
+.songContainer:hover .index{
+  opacity: 0;
+}
+
+.playIcon{
+  opacity: 0;
+}
+
+.songContainer:hover .playIcon{
+  opacity: 1;
+}

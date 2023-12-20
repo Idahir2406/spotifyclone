@@ -2,10 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+
+main{
+  min-width: 500px;
+}
+
+#app{
+  display: grid;
+  grid-template-areas: 
+    "aside main main"
+    "player player player";
+  grid-template-columns: 350px 1fr;
+  grid-template-rows: 82vh 14.2vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ @apply bg-zinc-700;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-600
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +63,17 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.recent-played-card{
+  min-width: 230px;
+}
+
+.recent-played-card:hover .play {
+  @apply opacity-100;
+  transition: all 0.5s ease-in-out;
+}
+
+.play {
+  @apply opacity-0;
 }

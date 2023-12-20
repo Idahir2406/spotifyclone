@@ -1,0 +1,51 @@
+
+.popContainer:hover .popOver{
+  @apply opacity-100;
+  transition: all 0.5s ease-in-out;
+}
+
+.popOver{
+  @apply opacity-0;
+}
+
+.translate{
+
+}
+
+.slider > button:last-child{
+  opacity: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.sliderGradient > button:last-child{
+  opacity: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav{
+  display: grid;
+  grid-template-areas: 
+  "start"
+  "library";
+  grid-template-columns: 100%;
+  grid-template-rows: 20vh 61vh;
+}
+
+/* .slider > button:last-child{
+  opacity: 50%;
+} */
+
+.father{
+  display: flex;
+  gap: 10px;
+}
+
+.child{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.father > .child:first-child {
+  background-color: blue;
+}
