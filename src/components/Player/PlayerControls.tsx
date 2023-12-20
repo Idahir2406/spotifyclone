@@ -71,11 +71,7 @@ export const PlayerControls = ({
         </PlayerButton>
       </div>
       <MusicSlider onChange={onSliderChange} min={0} max={audioRef?.current?.duration} currentTime={currentTime} duration={formatTime(audioRef?.current?.duration)}/>
-      <audio
-        ref={audioRef}
-        src="/music/1/01.mp3"
-        
-      ></audio>
+      
     </div>
   );
 };

@@ -1,3 +1,4 @@
+"use client";
 import { FaRegSquareCaretRight } from "react-icons/fa6";
 import { songs } from "lib/data";
 import Link from "next/link";
@@ -14,6 +15,12 @@ import { useRef } from "react";
 export const PlayerBar = () => {
   const song = songs[2];
   const audioRef = useRef(null);
+
+  const handleVolume = (e: any) => {
+    console.log(audioRef.current.volume);
+    audioRef.current.volume = e / 100;
+  }
+
   return (
     <footer className="[grid-area:player] sticky  bottom-0 bg-black flex items-center justify-between px-4  rounded-md overflow-hidden ">
       <div className="flex items-center gap-3">
@@ -33,7 +40,7 @@ export const PlayerBar = () => {
           </Link>
         </div>
       </div>
-      <PlayerControls />
+      <PlayerControls audioRef={audioRef} />
       <div className="flex items-center gap-4">
         <PlayerButton>
           <FaRegSquareCaretRight size={18} />
@@ -48,11 +55,17 @@ export const PlayerBar = () => {
         <PlayerButton>
           <PiDevicesBold />
         </PlayerButton>
-        <VolumeSlider />
+        <VolumeSlider defaultValue={[100]} min={0} max={100} onChange={handleVolume} />
         <PlayerButton>
           <AiOutlineExpandAlt className="text-gray-500 " size={18} />
         </PlayerButton>
       </div>
+      <audio
+        
+        ref={audioRef}
+        src="/music/1/01.mp3"
+        
+      ></audio>
     </footer>
   );
 };

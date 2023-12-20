@@ -22,6 +22,7 @@ export const MusicSlider = ({
       <div className="flex items-center gap-2 text-gray-300 text-xs">
         <p>{currentTime ? currentTime : "0:00"}</p>
         <Slider
+          className="w-25vw"
           defaultValue={defaultValue}
           max={max}
           min={min}
